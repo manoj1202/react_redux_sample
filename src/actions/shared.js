@@ -1,6 +1,6 @@
 import {getInitialData} from "../utils/api"
-import { receiveTweets } from "./tweets";
-import {receiveUsers} from "./users"
+import { receiveTweets } from "../actions/tweets";
+import {receiveUsers} from "../actions/users"
 
 export function handleInitialData(){
     return (dispatch) =>{
