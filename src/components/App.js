@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux"
-import { handleInitiallData } from "../actions/shared"
+import { handleInitialData } from "../actions/shared"
 
 
 class App extends Component {
   componentDidMount() {
-    this.props.dispatch(handleInitiallData())
+    this.props.dispatch(handleInitialData())
   }
   render() {
     return (
