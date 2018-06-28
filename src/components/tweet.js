@@ -1,12 +1,16 @@
 import React,{ Component } from "react"
 import { connect } from "react-redux"
-import { formatTweet } from "../utils/helpers"
+import { formatTweet, formatDate } from "../utils/helpers"
 import TiArrowBackOutline from "react-icons/lib/ti/arrow-back-outline"
 import TiHeartOutline from "react-icons/lib/ti/heart-outline"
 import TiHeartFullOutline from "react-icons/lib/ti/heart-full-outline"
 
 
 class Tweet extends Component{
+    toParent =(e,id) => {
+        e.preventDefault()
+    }
+
     render(){
         const { tweet } = this.props
         if(tweet === null){
@@ -18,10 +22,21 @@ class Tweet extends Component{
         return(
             <div className= "tweet">
               <img
-                src = {avatar}
-                alt = {`Avatar of ${name}`}
-                className = "avatar"
-              />                
+                 src = {avatar}
+                 alt = {`Avatar of ${name}`}
+                 className = "avatar"
+              />     
+              <div className="tweet-info">
+                 <span>{name}</span>
+                 <div>{formatDate(timestamp)}</div>
+                 {parent && (
+                    <button className="replying-to" onClick={(e) => 
+                                                 this.toParent(e,parent.id)}>
+                      Reply to @{parent.author}
+                    </button>
+                 )}
+                 <p>{text}</p>
+              </div>           
             </div>
         )
     }
