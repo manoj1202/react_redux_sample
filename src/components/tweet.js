@@ -12,10 +12,16 @@ class Tweet extends Component{
         if(tweet === null){
            return <p>This tweet doesn't exit</p>
         }
-        console.log(this.props)
+        
+        const {name, avatar,timestamp, text, hasLiked, likes, replies, id, 
+                parent}  = tweet
         return(
             <div className= "tweet">
-                
+              <img
+                src = {avatar}
+                alt = {`Avatar of ${name}`}
+                className = "avatar"
+              />                
             </div>
         )
     }
