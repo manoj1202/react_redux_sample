@@ -21,7 +21,7 @@ class Tweet extends Component{
            return <p>This tweet doesn't exit</p>
         }
         
-        const {name, avatar,timestamp, text, hasLiked, likes, replies, id, 
+        const {name, avatar,timestamp, text, hasLiked, likes, replies,  
                 parent}  = tweet
         return(
             <div className= "tweet">
