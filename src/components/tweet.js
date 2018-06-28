@@ -1,7 +1,7 @@
 import React,{ Component } from "react"
 import { connect } from "react-redux"
 import { formatTweet } from "../utils/helpers"
-import TiArrowBackOutline from "react-icons/lib/ti/arooe-back-outline"
+import TiArrowBackOutline from "react-icons/lib/ti/arrow-back-outline"
 import TiHeartOutline from "react-icons/lib/ti/heart-outline"
 import TiHeartFullOutline from "react-icons/lib/ti/heart-full-outline"
 
