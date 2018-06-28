@@ -13,7 +13,7 @@ class Tweet extends Component{
     }
 }
 
-function mapStateToProps({auhtedUser, users,tweets}, {id}){
+function mapStateToProps({authedUser, users,tweets}, {id}){
     const tweet = tweets[id]
     return{
         authedUser,
