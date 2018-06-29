@@ -1,4 +1,4 @@
-import { saveLikedToggle } from '../utils/api'
+import { saveLikeToggle } from '../utils/api'
 
 export const RECEIVE_TWEETS = "RECEIVE_TWEETS"
 export const TOGGLE_TWEET = "TOGGLE_TWEET"
@@ -23,7 +23,7 @@ export function handleToggleTweet(info){
     return (dispatch) => {
         dispatch(toggleTweet(info))
 
-        return saveLikedToggle(info)
+        return saveLikeToggle(info)
           .catch((e) => {
                 console.warn("Error in handleToggleTweet:", e)
                 dispatch(toggleTweet())
