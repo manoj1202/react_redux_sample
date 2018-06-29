@@ -10,7 +10,7 @@ export function receiveTweets(tweets){
     }
 }
 
-function  toggleTweet(id, authedUser, hasLiked){
+function  toggleTweet(id, authedUser, hasLiked){            
     return{
         type: TOGGLE_TWEET,
         id,
@@ -26,7 +26,7 @@ export function handleToggleTweet(info){
         return saveLikeToggle(info)
           .catch((e) => {
                 console.warn("Error in handleToggleTweet:", e)
-                dispatch(toggleTweet())
+                dispatch(toggleTweet(info))
                 alert("There was an error liking the tweet. Try again")
           })
         
