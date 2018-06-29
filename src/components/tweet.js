@@ -10,7 +10,7 @@ import {handleToggleTweet} from "../actions/tweets"
 class Tweet extends Component{
     handelLike = (e) =>{
         e.preventDefault()
-        const {dispatch, authedUser, tweet} = this.porops
+        const {dispatch, authedUser, tweet} = this.props
 
         dispatch(handleToggleTweet({
             id: tweet.id,
@@ -73,7 +73,7 @@ function mapStateToProps({authedUser, users, tweets}, {id}){
     const parentTweet = tweet ? tweets[tweet.replyingTo] : null
     return{
         authedUser,
-        tweet:tweet 
+        tweet:  tweet 
                 ? formatTweet(tweet, users[tweet.author], authedUser, parentTweet)
                 : null
     }
